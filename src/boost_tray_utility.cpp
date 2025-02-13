@@ -1,5 +1,6 @@
 #include <windows.h>
 #include <shellapi.h>
+#include "resource.h"
 
 // Tray icon active options
 // TODO: Move in some build option 
@@ -33,7 +34,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
     nid.hWnd = hWnd;
     nid.uID = 1; // Unique ID for the tray icon
     nid.uFlags = NIF_ICON | NIF_MESSAGE | NIF_TIP;
-    nid.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(L"logo.ico")); // Load your icon.  IDI_APPLICATION is a placeholder. *Important*
+    nid.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_ICON1)); // Load your icon.  IDI_APPLICATION is a placeholder. *Important*
     nid.uCallbackMessage = WM_TRAY_ICON;
     wcscpy_s(nid.szTip, L"My Tray Icon App");  // Tooltip text
 
